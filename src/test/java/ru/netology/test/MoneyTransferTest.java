@@ -4,7 +4,6 @@ import lombok.val;
 import org.junit.jupiter.api.Test;
 
 import ru.netology.data.DataHelper;
-import ru.netology.page.ErrorMessage;
 import ru.netology.page.LoginPageV1;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -78,6 +77,6 @@ class MoneyTransferTest {
         val moneyTransfer = dashboardPage.firstCard();
         int amount = 25000;
         moneyTransfer.moneyTransfer(amount, DataHelper.CardNumber.getSecondCard());
-        ErrorMessage.lowBalanceMessage();
+        moneyTransfer.lowBalanceMessage();;
     }
 }
